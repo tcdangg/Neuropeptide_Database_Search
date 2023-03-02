@@ -23,7 +23,7 @@ peptide_name = 'CoG2_YPSGFLGMR(Amidated)_27323_pseudo_intensity_'
 percent_spectrum_exp = 188.
 
 
-pseudo_intensity_list = [10,15,20,25,30]
+pseudo_intensity_list = [10,15,20,25]
 
 
 hmass = 1.00784
