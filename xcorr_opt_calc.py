@@ -16,14 +16,15 @@ import statistics
 import matplotlib.pyplot as plt
 from pandasgui import show
 working_directory = r"C:\Users\lawashburn\Documents\DBpep_v2\opt_predict_test\20230301\report"
-TBY_path = r"D:\Bulk_Ion_Lists\Theoretical_b_y_ion_YPSGFLGMR(Amidated).txt"
-predicted = r"C:\Users\lawashburn\Documents\DBpep_v2\XCorr_Opt\XCorr_validation\20230214\KD_search_results_v5\CoG_Unlabeled_DDA_TR2\xcorr_data\YPSGFLGMR(Amidated)_27323_theo_rep.csv"
-experimental_path = r"C:\Users\lawashburn\Documents\DBpep_v2\XCorr_Opt\XCorr_validation\20230214\KD_search_results_v5\CoG_Unlabeled_DDA_TR2\xcorr_data\YPSGFLGMR(Amidated)_27323_exp_rep.csv"
-peptide_name = 'CoG2_YPSGFLGMR(Amidated)_27323_pseudo_intensity_'
-percent_spectrum_exp = 188.
+TBY_path = r"D:\Bulk_Ion_Lists\Theoretical_b_y_ion_ELNFLRF(Amidated).txt"
+predicted = r"C:\Users\lawashburn\Documents\DBpep_v2\XCorr_Opt\XCorr_validation\20230214\KD_search_results_v5\PO3_top20\xcorr_data\ELNFLRF(Amidated)_6351_theo_rep.csv"
+experimental_path = r"C:\Users\lawashburn\Documents\DBpep_v2\XCorr_Opt\XCorr_validation\20230214\KD_search_results_v5\PO3_top20\xcorr_data\ELNFLRF(Amidated)_6351_exp_rep.csv"
+peptide_name = 'PO3_top20_ELNFLRF(Amidated)_6351_'
+percent_spectrum_exp = 214.2857143
 
 
-pseudo_intensity_list = [10,15,20,25]
+
+pseudo_intensity_list = [16,17,18,19]
 
 
 hmass = 1.00784
