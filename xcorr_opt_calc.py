@@ -15,7 +15,7 @@ from random import sample
 import statistics 
 import matplotlib.pyplot as plt
 from pandasgui import show
-working_directory = r"C:\Users\lawashburn\Documents\DBpep_v2\opt_predict_test\20230303\100rounds"
+working_directory = r"C:\Users\lawashburn\Documents\DBpep_v2\opt_predict_test\all_plots"
 # TBY_path = r"D:\Bulk_Ion_Lists\Theoretical_b_y_ion_ELNFLRF(Amidated).txt"
 # predicted = r"C:\Users\lawashburn\Documents\DBpep_v2\XCorr_Opt\XCorr_validation\20230214\KD_search_results_v5\PO3_top20\xcorr_data\ELNFLRF(Amidated)_6351_theo_rep.csv"
 # experimental_path = r"C:\Users\lawashburn\Documents\DBpep_v2\XCorr_Opt\XCorr_validation\20230214\KD_search_results_v5\PO3_top20\xcorr_data\ELNFLRF(Amidated)_6351_exp_rep.csv"
@@ -25,8 +25,10 @@ working_directory = r"C:\Users\lawashburn\Documents\DBpep_v2\opt_predict_test\20
 
 
 # pseudo_intensity_list = [16,17,18,19]
-path = r"C:\Users\lawashburn\Documents\DBpep_v2\opt_predict_test\pathlist.csv"
+path = r"C:\Users\lawashburn\Documents\DBpep_v2\opt_predict_test\pathlists\20230306_SG3_v3.csv"
  
+fold_change_all_rep = pd.DataFrame()
+
 path_list = pd.read_csv(path) 
 
 path_length = len(path_list)
@@ -50,7 +52,7 @@ for x in range(0,path_length):
     
     hmass = 1.00784
     bin_tolerance = 0.02
-    rounds = 5
+    rounds = 100
     
     theoretical_intensity = 50
     exp_intensity = 50
@@ -269,6 +271,16 @@ for x in range(0,path_length):
         fig_out_path = working_directory + '\\' + peptide_ID + '_' + str(pseudo_intensity) + '.png'
         plt.savefig(fig_out_path)
         plt.close()
+        
+        avg_value
+        Background
+        fold_change = avg_vallue/background
+        
+        fold_change_rep = pd.DataFrame()
+        fold_change_rep['Peptide'] = peptide_ID
+        fold_change_rep['Fold Change'] = fold_change
+        
+        fold_change_all_rep = pd.concat([fold_change_all_rep,fold_change_rep])
     
     
         
