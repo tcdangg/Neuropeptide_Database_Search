@@ -25,7 +25,7 @@ import numpy as np
 start = time.time()
 
 ##User input##
-output_parent_directory = r"C:\Users\lawashburn\Documents\DBpep_v2\finale\20230414\target_decoy_1iteration_v3" #folder in which all output directories will be generated
+output_parent_directory = r"C:\Users\lawashburn\Documents\DBpep_v2\finale\Reference_DB" #folder in which all output directories will be generated
 db_path = r"C:\Users\lawashburn\Documents\DBpep_v2\finale\20230414\target_decoy_1iteration_v2\target_decoy_database_iteration1.fasta" #database fasta path
 base_file_path = r"C:/Users/lawashburn/Documents/DBpep_v2/XCorr_Opt/XCorr_validation/20230207/KD_Training_Spectra/MS2_formatted"
 
@@ -44,11 +44,11 @@ subsequent_matching_rounds = 4
 spectra_segments = 50
 
 amidation = True
-oxidation_M_status = False
+oxidation_M_status = True
 pyroglu_E_status = True
 pyroglu_Q_status = True
-sulfo_Y_status = False
-max_modifications = 2
+sulfo_Y_status = True
+max_modifications = 3
 
 filter_high_int_mz = False
 
@@ -905,6 +905,13 @@ print('Fasta read')
 #fasta_to_df = scrambled(fasta_to_df_ordered)
 fasta_to_df = fasta_to_df_ordered
 fasta_w_mass = db_seq_mass_compile(fasta_to_df)
+
+file_path = output_parent_directory + '\\target_decoy_df_full.csv'
+with open(file_path,'w',newline='') as filec:
+        writerc = csv.writer(filec)
+        fasta_w_mass.to_csv(filec,index=False)
+
+#%%
 print('Fasta masses calculated')
 for raw_converter_path in raw_converter_path_input:
     print(raw_converter_path)
