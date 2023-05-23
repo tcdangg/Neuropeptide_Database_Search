@@ -8,7 +8,7 @@ Created on Mon May 22 18:30:55 2023
 import pandas as pd 
 import numpy as np 
 import csv 
-from matching_motif import matches_df
+from matching_motif_code import matches_df
 
 #reading csv 
 working_directory = r'C:/Users/15156/Desktop/Motif score'
